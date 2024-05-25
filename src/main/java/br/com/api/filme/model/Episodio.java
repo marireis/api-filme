@@ -1,5 +1,8 @@
 package br.com.api.filme.model;
 
+import jakarta.persistence.ManyToOne;
+import org.hibernate.annotations.ManyToAny;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
@@ -9,6 +12,8 @@ public class Episodio {
     private Integer numeroEpisodio;
     private Double avaliacao;
     private LocalDate dataLancamento;
+    @ManyToOne
+    private Serie serie;
 
     public Episodio(Integer temporada, DadosEpisodios dadosEpisodio) {
         this.temporada = temporada;
